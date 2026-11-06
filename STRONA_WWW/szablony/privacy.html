@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy | MyceliumNEWS</title>
+<meta name="description" content="How MyceliumNEWS and the MyceliumNEWS Desktop application handle personal data: what is read from TikTok, what is stored locally, and how to delete it.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+[[HEADER]]
+<main>
+<div class="wrap">
+<article class="doc">
+  <h1>Privacy Policy</h1>
+  <p class="meta">Last updated: [[UPDATED]]</p>
+
+  <p>This Privacy Policy explains how personal data is handled by the MyceliumNEWS website and by the MyceliumNEWS Desktop application (together, the &ldquo;Services&rdquo;). The Services are operated by [[OPERATOR]] (&ldquo;MyceliumNEWS&rdquo;, &ldquo;we&rdquo;). Contact: <a href="mailto:[[CONTACT_EMAIL]]">[[CONTACT_EMAIL]]</a>.</p>
+
+  <h2>1. Summary</h2>
+  <ul>
+    <li>The website sets no cookies, has no forms, and uses no analytics, advertising or third-party scripts or fonts.</li>
+    <li>The Desktop application runs only on the user's own computer. We run no server for it, so we receive none of the data it reads.</li>
+    <li>It reads statistics from a TikTok account only after the holder of that account approves access on TikTok's own login page.</li>
+    <li>The data stays on that computer, is not sold, shared or used for advertising, and can be deleted at any time.</li>
+  </ul>
+
+  <h2>2. The website</h2>
+  <p>The website is a static site hosted on GitHub Pages. We do not collect personal data through it and we do not set cookies. As with any web hosting, the hosting provider, GitHub, may process technical information such as your IP address and browser details in server logs when you visit; see <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's privacy statement</a>. We do not have access to those logs. If you write to us by email (see <a href="contact.html">Contact</a>), we process your email address and message only to answer you.</p>
+
+  <h2>3. The MyceliumNEWS Desktop application</h2>
+  <h3>3.1 What the application reads from TikTok</h3>
+  <p>When you connect an account with TikTok Login Kit and approve the permissions, the application requests the following read-only data through the TikTok Display API:</p>
+  <table>
+    <thead><tr><th>Scope</th><th>Data</th><th>Stored locally?</th></tr></thead>
+    <tbody>
+      <tr><td><code>user.info.basic</code></td><td>Open ID, display name, profile picture URL</td><td>Open ID is stored with the access token; display name is stored in snapshots; the profile picture URL is received but not stored.</td></tr>
+      <tr><td><code>user.info.stats</code></td><td>Follower count, following count, like count, video count</td><td>Yes, in dated snapshots.</td></tr>
+      <tr><td><code>video.list</code></td><td>For each public video: ID, title or description, creation time, duration, cover image URL, share URL, view count, like count, comment count, share count</td><td>Yes, in dated snapshots.</td></tr>
+    </tbody>
+  </table>
+  <p>The application does not read direct messages, the text of comments, lists of followers or advertising data, and it does not request any permission to post, upload, edit or delete content.</p>
+
+  <h3>3.2 What is stored, and where</h3>
+  <ul>
+    <li><strong>Authorization tokens</strong> (an access token, a refresh token, the Open ID, the granted scopes and expiry times) are stored in a local file on the user's computer so that the application can refresh access without asking the user to log in again. They are never displayed, logged or transmitted anywhere except to TikTok's own API.</li>
+    <li><strong>Statistics snapshots</strong> are stored as files in a folder on the user's computer, one per day on which the user refreshes the data.</li>
+    <li>The application's configuration contains the application's TikTok client key and client secret. These identify the application, not the user.</li>
+  </ul>
+  <p>We do not receive, copy or back up this data on any server we control. If the user backs up their computer, the files are subject to that backup.</p>
+
+  <h3>3.3 Purpose and legal basis</h3>
+  <p>The data is used only to display the account's statistics to the person who authorized access and to let them compare the numbers over time. Where data protection law such as the GDPR applies, the basis is the consent given by the account holder when they approve access on TikTok, which they can withdraw at any time as described below.</p>
+
+  <h3>3.4 Sharing</h3>
+  <p>We do not sell, rent or share this data, and we do not use it for advertising, profiling, or training machine-learning models. The application communicates only with TikTok's servers (<code>tiktok.com</code> and <code>open.tiktokapis.com</code>) and with the browser on the same computer.</p>
+
+  <h3>3.5 Retention and deletion</h3>
+  <ul>
+    <li>Tokens are kept until the user disconnects or until they expire. TikTok decides the lifetime of tokens.</li>
+    <li>Snapshots are kept until the user deletes the files.</li>
+    <li><strong>Disconnect:</strong> the Disconnect button in the application deletes the stored tokens and asks TikTok to revoke the access token.</li>
+    <li><strong>Revoke on TikTok:</strong> the account holder can also remove the application's access from the app permission settings of their TikTok account.</li>
+    <li><strong>Delete snapshots:</strong> delete the snapshot files from the application's statistics folder.</li>
+  </ul>
+  <p>Because we hold no copy of the data, we cannot retrieve or delete it for you remotely; the steps above remove all of it.</p>
+
+  <h2>4. Children</h2>
+  <p>The Services are not directed to children, and we do not knowingly collect personal data from children.</p>
+
+  <h2>5. Your rights</h2>
+  <p>Depending on where you live, you may have the right to access, correct or delete your personal data, to restrict or object to processing, and to complain to a data protection authority. For the website and for any email you send us, contact us at <a href="mailto:[[CONTACT_EMAIL]]">[[CONTACT_EMAIL]]</a>. For data inside the Desktop application, you can exercise these rights yourself using the steps in section 3.5.</p>
+
+  <h2>6. Security</h2>
+  <p>Sign-in uses TikTok's authorization flow for desktop applications with PKCE and a one-time <code>state</code> value, and a loopback redirect to the user's own computer. Tokens are stored only in the application's local configuration folder. No method of storage is perfectly secure, and we recommend keeping your computer's user account protected.</p>
+
+  <h2>7. TikTok</h2>
+  <p>When you log in with TikTok, TikTok's own terms and privacy policy apply to that login and to your TikTok account. MyceliumNEWS is not affiliated with TikTok.</p>
+
+  <h2>8. Changes</h2>
+  <p>We may update this policy. The date at the top shows the latest version, and significant changes will be described on this page.</p>
+
+  <h2>9. Contact</h2>
+  <p>[[OPERATOR]], <a href="mailto:[[CONTACT_EMAIL]]">[[CONTACT_EMAIL]]</a>. See also the <a href="contact.html">contact page</a> and our <a href="terms.html">Terms of Service</a>.</p>
+</article>
+</div>
+</main>
+[[FOOTER]]
+</body>
+</html>

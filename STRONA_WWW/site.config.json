@@ -1,0 +1,9 @@
+{
+  "_note": "Fill in the three values and set approved_by_owner to true ONLY after you have read privacy.html and terms.html in STRONA_WWW/podglad. build_site.py publish refuses to build otherwise. The contact e-mail and operator name will be PUBLIC on the website.",
+  "operator": "MyceliumNEWS",
+  "contact_email": "mycelium6666@gmail.com",
+  "governing_law_country": "Poland",
+  "updated": "",
+  "approved_by_owner": true,
+  "approved_note": "Owner approved privacy.html and terms.html on 2026-11-06 and supplied operator, public e-mail and country."
+}
