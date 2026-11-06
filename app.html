@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MyceliumNEWS Desktop | TikTok statistics, read-only</title>
+<meta name="description" content="MyceliumNEWS Desktop is a read-only Windows application that connects to a TikTok account with TikTok Login Kit and displays its public statistics through the TikTok Display API.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="MyceliumNEWS home"><img src="assets/logo.svg" alt="" width="34" height="34"><span>Mycelium<b>NEWS</b></span></a>
+    <nav class="main" aria-label="Main">
+      <a href="index.html" >Home</a>
+      <a href="app.html" aria-current="page">Desktop app</a>
+      <a href="privacy.html" >Privacy Policy</a>
+      <a href="terms.html" >Terms of Service</a>
+      <a href="contact.html" >Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div class="eyebrow">MyceliumNEWS Desktop</div>
+      <h1>Your TikTok numbers, read-only.</h1>
+      <p class="lead">A small Windows application that signs in with TikTok, reads the public statistics of the account you authorize, and shows them in one window. It cannot post, upload, edit or delete anything.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="notice"><strong>Current availability.</strong> MyceliumNEWS Desktop is used by the MyceliumNEWS team to view the statistics of the MyceliumNEWS TikTok account. It runs on the user's own computer and has no online service or user accounts of its own. It is not currently offered as a public download.</div>
+
+    <section>
+      <h2>What the application does</h2>
+      <div class="grid">
+        <div class="card"><h3>1. Connect with TikTok</h3><p>You sign in on TikTok's own login page using TikTok Login Kit for Desktop and approve the permissions listed below. MyceliumNEWS never sees your TikTok password.</p></div>
+        <div class="card"><h3>2. Read account statistics</h3><p>Shows the display name and the follower, following, like and video counts of the connected account.</p></div>
+        <div class="card"><h3>3. Read video statistics</h3><p>Lists the account's public videos with duration and view, like, comment and share counts, using the TikTok Display API.</p></div>
+        <div class="card"><h3>4. Keep a local history</h3><p>Saves a dated snapshot of these numbers as a file on your computer so you can compare days. Nothing is uploaded anywhere.</p></div>
+        <div class="card"><h3>5. Disconnect any time</h3><p>The Disconnect button removes the stored access on your computer and asks TikTok to revoke it.</p></div>
+      </div>
+      <figure>
+        <img src="assets/img/app-window.png" alt="MyceliumNEWS Desktop main window before a TikTok account is connected: Connect, Refresh and Disconnect buttons, an account summary and an empty video table" width="1040" height="680">
+        <figcaption>The main window before an account is connected. After you connect, the summary and the table fill with the account's statistics.</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>TikTok products and permissions</h2>
+      <p>The application uses two TikTok products and requests only read-only permissions (scopes):</p>
+      <table>
+        <thead><tr><th>Product / scope</th><th>What we read</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>Login Kit (Desktop)</td><td>An authorization from the account holder; TikTok returns an access token for that account.</td><td>To let the account holder sign in on TikTok and approve access without sharing a password.</td></tr>
+          <tr><td><code>user.info.basic</code></td><td>Open ID and display name (the profile picture URL is received but not stored).</td><td>To show which account is connected.</td></tr>
+          <tr><td><code>user.info.stats</code></td><td>Follower, following, like and video counts.</td><td>To show the account summary and its changes over time.</td></tr>
+          <tr><td><code>video.list</code></td><td>For each public video: ID, title or description, creation time, duration, cover image URL, share URL, and view, like, comment and share counts.</td><td>To show which videos perform and to save the numbers as snapshots.</td></tr>
+        </tbody>
+      </table>
+      <h3>What it does not do</h3>
+      <ul>
+        <li>It does not post, upload, schedule, edit or delete videos, and it does not request any scope that would allow this.</li>
+        <li>It does not read direct messages, comment text, follower lists or advertising data.</li>
+        <li>It does not send any data to MyceliumNEWS or to any third party. There is no MyceliumNEWS server involved.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>How sign-in works</h2>
+      <ol>
+        <li>The application opens TikTok's authorization page in your browser, with a one-time random <code>state</code> value and a PKCE code challenge.</li>
+        <li>You log in on TikTok and approve the permissions.</li>
+        <li>TikTok redirects your browser to a loopback address on your own computer (<code>http://127.0.0.1</code> with a fixed port). The application checks the <code>state</code> value and exchanges the one-time code for an access token.</li>
+        <li>The access token is kept in a file on your computer and refreshed automatically before it expires, until you disconnect.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Your data</h2>
+      <p>Everything the application reads or stores stays on the computer where it runs. Details are in the <a href="privacy.html">Privacy Policy</a>, and the rules for using the application are in the <a href="terms.html">Terms of Service</a>.</p>
+    </section>
+
+    <div class="policies" role="navigation" aria-label="Policies">
+      <strong>Policies:</strong>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <strong style="color:var(--text)">MyceliumNEWS</strong><br>
+        Short, sourced news on science, technology and space.<br>
+        Operated by MyceliumNEWS.
+      </div>
+      <div>
+        <strong style="color:var(--text)">Legal</strong>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <strong style="color:var(--text)">Product</strong>
+        <ul>
+          <li><a href="app.html">MyceliumNEWS Desktop</a></li>
+          <li><a href="index.html#how-we-work">How we work</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="small" style="margin-top:26px">&copy; 2026 MyceliumNEWS. TikTok is a trademark of its respective owner; MyceliumNEWS is not affiliated with or endorsed by TikTok. This website sets no cookies and uses no analytics or third-party scripts.</p>
+  </div>
+</footer>
+
+</body>
+</html>
